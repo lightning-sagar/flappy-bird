@@ -108,14 +108,21 @@ function gameOver() {
     clearInterval(gameTimerId);
     obstacleTimerIds.forEach((id) => clearInterval(id));
 
-    h2.innerText = "Game Over. Restarting in 5 seconds...";
+    let counter = 5; // Initial counter value
+    h2.innerText = `Game Over. Restarting in ${counter} seconds...`;
 
-    setTimeout(() => {
-        h2.innerText = "";
-        restartGame();
-    }, 5000);
+    const countdownInterval = setInterval(() => {
+        counter--;
+
+        if (counter > 0) {
+            h2.innerText = `Game Over. Restarting in ${counter} seconds...`;
+        } else {
+            h2.innerText = ""; 
+            clearInterval(countdownInterval);
+            restartGame();
+        }
+    }, 1000); 
 }
-
 
 function restartGame() {
     const obstacles = document.querySelectorAll('.obstacle, .topObstacle');
