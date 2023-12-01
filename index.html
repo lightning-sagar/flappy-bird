@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Flappy Bird Home</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4; /* Light Gray */
+        }
+
+        .home-container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            margin: 10px 0;
+            color: #3498db; /* Dodger Blue */
+            font-size: 32px;
+        }
+
+        .difficulty-levels {
+            margin-top: 20px;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9; /* Darker Dodger Blue */
+        }
+    </style>
+</head>
+<body>
+    <div class="home-container">
+        <img src="01EkIOfisgxkfodZ4JmTIXa-1.webp" alt="Flappy Bird Logo">
+        <h1>Flappy Bird</h1>
+        <div class="difficulty-levels">
+            <button onclick="startGame('easy')">Easy</button>
+            <button onclick="startGame('medium')">Medium</button>
+            <button onclick="startGame('hard')">Hard</button>
+        </div>
+    </div>
+
+    <script>
+        function startGame(difficulty) {
+            window.location.href = `game.html?difficulty=${difficulty}`;
+        }
+    </script>
+</body>
+</html>
